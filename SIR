@@ -1,1 +1,34 @@
+Excel_for_Pat = []
+Excel_for_Vir = []
+Pat = []
+Vir = []
 
+class Patient():
+    def __init__(self,Gen,Age,Pain,Medhelp,Was_virus,Was_op):
+        self.Gen = Gen
+        self.Age = Age
+        self.Pain = Pain
+        self.Medhelp = Medhelp
+        self.Was_virus = Was_virus
+        self.Was_op = Was_op
+
+for i in Excel_for_Pat:
+    i = Patient(i.СпециальностьВрача,i.Возраст,i.Жалобы,i.ПринимаемыеПрепараты,i.ПеренесенныеЗаболевания,i.ПеренесенныеОперации)
+    Pat.append(i)
+
+class Virus():
+    def __init__(self,Gen,Age,Pain):
+        self.Gen = Gen
+        self.Age = Age
+        self.Pain = Pain
+
+for i in Excel_for_Vir:
+    i = Virus(i.СпециальностьВрача, i.Возраст, i.Жалобы)
+    Vir.append(i)
+
+for i in Pat:
+    for I in Vir:
+        if i.СпециальностьВрача == I.СпециальностьВрача:
+            if i.Возраст == I.Возраст:
+                if i.Жалобы ==  I.Жалобы:
+                    print('Patient №', Pat(i).index+1, 'has virus №', Vir(I).index+1)
